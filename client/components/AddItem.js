@@ -32,19 +32,21 @@ class AddItem extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Item name:
+      <div className="add-item-form">
+        <div className="form-heading">
+          <h3>Add items to the list</h3>
+        </div>
+        <form onSubmit={this.handleSubmit}>
           <input
             type="text"
             name="name"
             value={this.props.name}
             defaultValue={this.state.name}
             onChange={this.handleChangeName}
+            placeholder="Item name"
+            required
           />
-        </label>
-        <label>
-          Qty:
+
           <input
             type="number"
             name="qty"
@@ -52,9 +54,12 @@ class AddItem extends Component {
             value={this.props.qty}
             onChange={this.handleChangeQty}
           />
-        </label>
-        <input type="submit" value="Add to Basket" />
-      </form>
+
+          <button type="submit" value="Add item" className="add-item-btn">
+            Add Item
+          </button>
+        </form>
+      </div>
     );
   }
 }

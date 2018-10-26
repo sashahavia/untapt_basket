@@ -1,5 +1,17 @@
 @import 'normalize';
 
+$dark_color: rgba(32, 31, 42, 1);
+$green: #43d1af;
+$hover_green: #2ebc99;
+$light_grey: #e6e6e6;
+$purple: #7308ff;
+
+@mixin borderBox() {
+  background: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 0.6em rgba(0, 0, 0, 0.09);
+}
+
 html {
   position: relative;
   min-height: 100%;
@@ -8,9 +20,98 @@ html {
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
+  color: $dark_color;
 }
 
 .container {
   width: 80%;
   margin: 0 auto;
+  .main {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.add-item-form {
+  margin-bottom: 2em;
+  input {
+    @include borderBox();
+    padding: 0.5em;
+    margin-right: 0.5em;
+    &:focus {
+      box-shadow: 0 0 5px $green;
+      border: 1px solid $green;
+      outline: 0;
+    }
+    &:-webkit-autofill {
+      background-color: white !important;
+      color: $dark_color !important;
+    }
+    &:required:focus {
+      border: 1px solid $purple;
+      outline: none;
+    }
+  }
+  .form-heading {
+    padding: 0.5em 0;
+  }
+  .add-item-btn {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    padding: 0.5em;
+    background: $green;
+    border-bottom: 2px solid #30c29e;
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
+    color: #fff;
+    &:hover {
+      background: $hover_green;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.shopping-list,
+.basket {
+  width: 45%;
+  ul {
+    list-style: none;
+    padding-inline-start: 0;
+    li {
+      border-bottom: 1px solid $light_grey;
+      padding: 0.5em 1em;
+    }
+  }
+  .btn-add {
+    float: right;
+    background-color: white;
+    border: none;
+    text-align: right;
+    text-decoration: none;
+    &:hover {
+      color: $purple;
+    }
+  }
+  .btn-clear {
+    background-color: $green;
+    border: none;
+    color: white;
+    padding: 0.5em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    &:hover {
+      background: $hover_green;
+    }
+  }
+}
+
+.basket {
+  margin-left: 4em;
+  @include borderBox();
+  padding: 0 1.5em 1em 1.5em;
 }
