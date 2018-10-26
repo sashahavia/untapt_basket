@@ -8,3 +8,9 @@ To start application
   npm install
   npm run start-dev
 ```
+
+To run tests
+
+```js
+  npm run test
+```
