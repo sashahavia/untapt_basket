@@ -24,7 +24,7 @@ export const removeItem = id => ({
 const itemsReducer = (state = [], action) => {
   switch (action.type) {
     case ADD_ITEMS:
-      console.log('in reducer action', action.item);
+      // console.log('in reducer action', action.item);
       return [...state, action.item];
     case REMOVE_ITEM:
       return [...state.slice(0, action.id), ...state.slice(action.id + 1)];

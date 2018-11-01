@@ -23,7 +23,7 @@ export const clearBasket = () => ({
 const basketReducer = (state = [], action) => {
   switch (action.type) {
     case ADD_TO_BASKET:
-      console.log('in Basket reducer action', action);
+      // console.log('in Basket reducer action', action);
       return [...state, action.item];
     case CLEAR_BASKET:
       return [];

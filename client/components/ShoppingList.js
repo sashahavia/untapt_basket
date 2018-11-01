@@ -6,7 +6,7 @@ import { removeItem } from '../store/items';
 
 const ShoppingList = props => {
   const { items } = props;
-  console.log('Shopping List', items);
+  // console.log('Shopping List', items);
   return (
     <div className="shopping-list">
       <h3>Shopping List</h3>

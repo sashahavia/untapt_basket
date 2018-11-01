@@ -17,7 +17,10 @@ class AddItem extends Component {
   handleSubmit(evt) {
     evt.preventDefault();
     this.props.addItems(this.state.name, this.state.qty);
-    evt.target.reset();
+    this.setState({
+      name: '',
+      qty: 1,
+    });
   }
 
   handleChangeName(evt) {
@@ -40,8 +43,7 @@ class AddItem extends Component {
           <input
             type="text"
             name="name"
-            value={this.props.name}
-            defaultValue={this.state.name}
+            value={this.state.name}
             onChange={this.handleChangeName}
             placeholder="Item name"
             required
@@ -50,8 +52,7 @@ class AddItem extends Component {
           <input
             type="number"
             name="qty"
-            defaultValue={this.state.qty}
-            value={this.props.qty}
+            value={this.state.qty}
             onChange={this.handleChangeQty}
           />
 
