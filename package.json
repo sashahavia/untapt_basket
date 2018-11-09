@@ -7,7 +7,7 @@
     "build-client": "webpack",
     "build-client-watch": "webpack -w",
     "deploy": "script/deploy",
-    "test": "mocha --require @babel/register \"./client/**/*.spec.js\"",
+    "test": "mocha --require @babel/register setup.js --recursive \"./client/**/*.spec.js\"",
     "start": "node server",
     "start-dev": "webpack -w & nodemon server/index.js",
     "heroku-postbuild": "webpack -p"
@@ -52,6 +52,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
+    "jsdom": "^13.0.0",
     "node-sass": "^4.9.4",
     "nodemon": "^1.18.4",
     "redux-mock-store": "^1.5.3",
